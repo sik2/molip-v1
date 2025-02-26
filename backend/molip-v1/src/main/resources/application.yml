@@ -2,7 +2,7 @@ server:
   port: 8090
 spring:
   application:
-    name: molipV1
+    name: molipv1
   profiles:
     active: dev
     include: secret
@@ -23,7 +23,7 @@ spring:
     driver-class-name: org.h2.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         default_batch_fetch_size: 100
@@ -33,7 +33,7 @@ spring:
     open-in-view: false
 logging:
   level:
-    com.ll.molipV1: DEBUG
+    com.ll.molipv1: DEBUG
     org.hibernate.SQL: DEBUG
     org.hibernate.orm.jdbc.bind: TRACE
     org.hibernate.orm.jdbc.extract: TRACE

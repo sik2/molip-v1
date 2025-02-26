@@ -34,6 +34,9 @@ dependencies {
 	// DB 관련
 	implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
 	runtimeOnly ("com.h2database:h2")
+
+	//OpenAPI
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0")
 }
 
 tasks.withType<Test> {
