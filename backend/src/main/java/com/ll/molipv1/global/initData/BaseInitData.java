@@ -17,10 +17,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Configuration
 @RequiredArgsConstructor
 @Slf4j
-public class InitData {
+public class BaseInitData {
     @Autowired
     @Lazy
-    private InitData self;
+    private BaseInitData self;
     private final PostService postService;
     private final MemberService memberService;
 
