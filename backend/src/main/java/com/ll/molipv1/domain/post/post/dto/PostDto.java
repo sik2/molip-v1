@@ -1,5 +1,6 @@
 package com.ll.molipv1.domain.post.post.dto;
 
+import com.ll.molipv1.domain.post.post.entity.Post;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,10 +12,10 @@ public class PostDto {
     private String body;
     private String authorName;
 
-    public PostDto(Long id, String subject, String body, String authorName) {
-        this.id = id;
-        this.subject = subject;
-        this.body = body;
-        this.authorName = authorName;
+    public PostDto(Post post) {
+        this.id = post.getId();
+        this.subject = post.getSubject();
+        this.body = post.getBody();
+        this.authorName = post.getMember().getNickname();
     }
 }

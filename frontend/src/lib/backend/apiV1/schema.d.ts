@@ -21,6 +21,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/posts/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** 공개글 단건 조회 */
+        get: operations["detail"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -31,6 +48,13 @@ export interface components {
             subject?: string;
             body?: string;
             authorName?: string;
+        };
+        RsDataPostDto: {
+            resultCode?: string;
+            /** Format: int32 */
+            statusCode?: number;
+            msg?: string;
+            data?: components["schemas"]["PostDto"];
         };
     };
     responses: never;
@@ -57,6 +81,28 @@ export interface operations {
                 };
                 content: {
                     "*/*": components["schemas"]["PostDto"][];
+                };
+            };
+        };
+    };
+    detail: {
+        parameters: {
+            query: {
+                id: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["RsDataPostDto"];
                 };
             };
         };
